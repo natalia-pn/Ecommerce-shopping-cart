@@ -6,14 +6,33 @@ import vans_36 from './images/vans-36.png';
 import vans_44 from './images/vans-44.png';
 import vans_39 from './images/vans-39.png';
 import down from './images/down-arrow.svg';
-
-
-
-
-
+import OrderedItem from './components/OrderedItem';
 import './App.css';
 
+const productsArray = [
+  {
+    image: vans_36,
+    description: "Vans - Zapatillas classic slip on",
+    size: 36,
+    price: "49,90",
+  },
+  {
+    image: vans_44,
+    description: "Vans - Zapatillas classic slip on",
+    size: 44,
+    price: "49,90",
+  },
+  {
+    image: vans_39,
+    description: "Vans - Zapatillas classic slip on",
+    size: 39,
+    price: "49,90",
+  },
+
+]
+
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
@@ -39,79 +58,9 @@ class App extends Component {
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
 
-                <div className="Order__summary">
-                  <img className="Vans-picture" src={vans_36} alt="Vans shoes"></img>
+                {productsArray.map((item, index) =>
+                  <OrderedItem key={index} image={item.image} description={item.description} size={item.size} price={item.price}/>)}
               
-                  <div className="Order__details">
-                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
-
-                    <div className="Delete-action__container">
-                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
-
-                      <p className="Delete-action">Eliminar</p>
-                    </div>
-
-                    <p className="Item__size">Talla: 36</p>
-
-                    <p className="Item__price">49,90€</p>
-
-                    <div className="Quantity-display__container">
-                      <div className="Quantity-increase__box">+</div>
-                      <div className="Quantity-display__box">1</div>
-                      <div className="Quantity-decrease__box">-</div>
-                    </div>
-                  </div> 
-                </div>
-
-                <div className="Order__summary">
-                  <img className="Vans-picture" src={vans_44} alt="Vans shoes"></img>
-              
-                  <div className="Order__details">
-                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
-
-                    <div className="Delete-action__container">
-                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
-
-                      <p className="Delete-action">Eliminar</p>
-                    </div>
-
-                    <p className="Item__size">Talla: 44</p>
-
-                    <p className="Item__price">49,90€</p>
-
-                    <div className="Quantity-display__container">
-                      <div className="Quantity-increase__box">+</div>
-                      <div className="Quantity-display__box">1</div>
-                      <div className="Quantity-decrease__box">-</div>
-                    </div>
-                  </div> 
-                </div>
-
-                <p className="Delivery-date">Entrega 15 de abril</p>
-
-                <div className="Order__summary">
-                  <img className="Vans-picture" src={vans_39} alt="Vans shoes"></img>
-              
-                  <div className="Order__details">
-                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
-
-                    <div className="Delete-action__container">
-                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
-
-                      <p className="Delete-action">Eliminar</p>
-                    </div>
-
-                    <p className="Item__size">Talla: 39</p>
-
-                    <p className="Item__price">49,90€</p>
-
-                    <div className="Quantity-display__container">
-                      <div className="Quantity-increase__box">+</div>
-                      <div className="Quantity-display__box">1</div>
-                      <div className="Quantity-decrease__box">-</div>
-                    </div>
-                  </div> 
-
                   <div className="Promotional-code__container">
                     <p className="Promotional-code">Código promocional</p>
                     <img className="Promotional-code__selection" src={down} alt="selection arrow"></img>
@@ -131,9 +80,6 @@ class App extends Component {
                     <button type="button" className="Purchase-button">comprar</button>
                
                   </div>
-
-
-                </div>
               </div>
             </div>
           </div>
