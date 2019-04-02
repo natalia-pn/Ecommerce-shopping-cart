@@ -3,6 +3,8 @@ import user from './images/user.svg';
 import bag from './images/bag.svg';
 import products from './images/products.png';
 import vans_36 from './images/vans-36.png';
+import vans_44 from './images/vans-44.png';
+
 
 
 
@@ -31,31 +33,56 @@ class App extends Component {
             <div className="Shopping-bag__summary">
               <p className="Item quantity">Tu cesta (3 productos)</p>
 
-              <div className="Order-summary__container">
+              <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
 
                 <div className="Order__summary">
                   <img className="Vans-picture" src={vans_36} alt="Vans shoes"></img>
+              
+                  <div className="Order__details">
+                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
+
+                    <div className="Delete-action__container">
+                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
+
+                      <p className="Delete-action__line">Eliminar</p>
+                    </div>
+
+                    <p className="Item__size">Talla: 36</p>
+
+                    <p className="Item__price">49,90€</p>
+
+                    <div className="Quantity-display__container">
+                      <div className="Quantity-increase__box">+</div>
+                      <div className="Quantity-display__box">1</div>
+                      <div className="Quantity-decrease__box">-</div>
+                    </div>
+                  </div> 
                 </div>
-                
-                <div className="Order__details">
-                  <p className="Item__description">Vans - Zapatillas classic slip on</p>
 
-                  <div className="Delete-action__container">
-                    <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
+                <div className="Order__summary">
+                  <img className="Vans-picture" src={vans_44} alt="Vans shoes"></img>
+              
+                  <div className="Order__details">
+                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
 
-                    <p className="Delete-action__line">Eliminar</p>
-                  </div>
+                    <div className="Delete-action__container">
+                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
 
-                  <p className="Item__size">Talla: 36</p>
+                      <p className="Delete-action__line">Eliminar</p>
+                    </div>
 
-                  <p className="Item__price">49,90€</p>
+                    <p className="Item__size">Talla: 44</p>
 
-                  <div className="Quantity-display__container"></div>
-                    <div className="Quantity-increase__box">+</div>
-                    <div className="Quantity-display__box">1</div>
-                    <div className="Quantity-decrease__box">-</div>
-                  </div>
+                    <p className="Item__price">49,90€</p>
+
+                    <div className="Quantity-display__container">
+                      <div className="Quantity-increase__box">+</div>
+                      <div className="Quantity-display__box">1</div>
+                      <div className="Quantity-decrease__box">-</div>
+                    </div>
+                  </div> 
+                </div>
               </div>
             </div>
           </div>
