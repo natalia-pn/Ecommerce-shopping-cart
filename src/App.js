@@ -4,6 +4,7 @@ import bag from './images/bag.svg';
 import products from './images/products.png';
 import vans_36 from './images/vans-36.png';
 import vans_44 from './images/vans-44.png';
+import vans_39 from './images/vans-39.png';
 
 
 
@@ -73,6 +74,32 @@ class App extends Component {
                     </div>
 
                     <p className="Item__size">Talla: 44</p>
+
+                    <p className="Item__price">49,90€</p>
+
+                    <div className="Quantity-display__container">
+                      <div className="Quantity-increase__box">+</div>
+                      <div className="Quantity-display__box">1</div>
+                      <div className="Quantity-decrease__box">-</div>
+                    </div>
+                  </div> 
+                </div>
+
+                <p className="Delivery-date">Entrega 15 de abril</p>
+
+                <div className="Order__summary">
+                  <img className="Vans-picture" src={vans_39} alt="Vans shoes"></img>
+              
+                  <div className="Order__details">
+                    <p className="Item__description">Vans - Zapatillas classic slip on</p>
+
+                    <div className="Delete-action__container">
+                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
+
+                      <p className="Delete-action__line">Eliminar</p>
+                    </div>
+
+                    <p className="Item__size">Talla: 39</p>
 
                     <p className="Item__price">49,90€</p>
 
