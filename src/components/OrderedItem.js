@@ -22,6 +22,7 @@ class OrderedItem extends Component {
                 return null;
             }
         });
+        this.props.addTotalProducts()
         console.log(this.state.itemTotal)
     }
 
@@ -37,6 +38,7 @@ class OrderedItem extends Component {
                 return null;
             }
         });
+        this.props.deductTotalProducts()
         console.log(this.state.itemTotal)
     }
 

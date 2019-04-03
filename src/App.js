@@ -32,8 +32,37 @@ const productsArray = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      total: 3
+    }
+  }
+
+  addTotalProducts = () => {
+    this.setState(prevState => ({
+      total: prevState.total + 1
+    }));
+  }
+
+  deductTotalProducts = () => {
+    this.setState(prevState => {
+      if(prevState.total > 3) {
+          return {
+            total: prevState.total - 1
+          }
+      } else {
+        return null;
+      }
+    });
+  }
   
   render() {
+    const { addTotalProducts, deductTotalProducts } = this;
+    const { total } = this.state;
+
+    console.log(this.state.total)
     return (
       <div className="App">
         <header className="App-header">
@@ -53,13 +82,13 @@ class App extends Component {
 
           <div className="Shopping-bag__container">
             <div className="Shopping-bag__summary">
-              <p className="Item quantity">Tu cesta (3 productos)</p>
+              <p className="Item quantity">{`Tu cesta ${total} productos)`}</p>
 
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
 
                 {productsArray.map((item, index) =>
-                  <OrderedItem key={index} image={item.image} description={item.description} size={item.size} price={item.price}/>)}
+                  <OrderedItem key={index} image={item.image} description={item.description} size={item.size} price={item.price} addTotalProducts={addTotalProducts} deductTotalProducts={deductTotalProducts}/>)}
               
                   <div className="Promotional-code__container">
                     <p className="Promotional-code">Código promocional</p>
