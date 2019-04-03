@@ -14,19 +14,19 @@ const productsArray = [
     image: vans_36,
     description: "Vans - Zapatillas classic slip on",
     size: 36,
-    price: "49,90",
+    price: 49.90,
   },
   {
     image: vans_44,
     description: "Vans - Zapatillas classic slip on",
     size: 44,
-    price: "49,90",
+    price: 49.90
   },
   {
     image: vans_39,
     description: "Vans - Zapatillas classic slip on",
     size: 39,
-    price: "49,90",
+    price: 49.90
   },
 
 ]

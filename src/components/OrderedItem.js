@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+
 class OrderedItem extends Component {
     constructor(props) {
         super(props);
     
         this.state = {
-          quantity: 1
+          quantity: 1,
+          itemTotal: this.props.price
         }
       }
 
@@ -13,12 +15,14 @@ class OrderedItem extends Component {
         this.setState(prevState => {
             if(prevState.quantity < 10) {
                 return {
-                    quantity: prevState.quantity + 1
+                    quantity: prevState.quantity + 1,
+                    itemTotal: prevState.itemTotal + this.props.price
                 }
             } else {
                 return null;
             }
         });
+        console.log(this.state.itemTotal)
     }
 
 
@@ -26,19 +30,26 @@ class OrderedItem extends Component {
         this.setState(prevState => {
             if(prevState.quantity > 1) {
                 return {
-                    quantity: prevState.quantity - 1
+                    quantity: prevState.quantity - 1,
+                    itemTotal: prevState.itemTotal - this.props.price
                 }
             } else {
                 return null;
             }
         });
+        console.log(this.state.itemTotal)
     }
+
+
 
     
     render() {
         const { image, description, size, price } = this.props;
-        const { quantity } = this.state;
+        const { quantity, itemTotal } = this.state;
         const { addQuantity, deductQuantity } = this;
+
+        const total = itemTotal.toFixed(2);
+
         return(
             <div className="Order__summary">
                   <img className="Vans-picture" src={image} alt="Vans shoes"></img>
@@ -54,7 +65,7 @@ class OrderedItem extends Component {
 
                     <p className="Item__size">{`Talla: ${size} `}</p>
 
-                    <p className="Item__price">{price}</p>
+                    <p className="Item__price">{total}</p>
 
                     <div className="Quantity-display__container">
                       <button type="button" className="Quantity-increase__button" onClick={addQuantity}>+</button>
