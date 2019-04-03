@@ -14,6 +14,7 @@ class OrderedItem extends Component {
     addQuantity = () => {
         this.setState(prevState => {
             if(prevState.quantity < 10) {
+                this.props.addTotalProducts()
                 return {
                     quantity: prevState.quantity + 1,
                     itemTotal: prevState.itemTotal + this.props.price
@@ -22,7 +23,6 @@ class OrderedItem extends Component {
                 return null;
             }
         });
-        this.props.addTotalProducts()
         console.log(this.state.itemTotal)
     }
 
@@ -30,6 +30,7 @@ class OrderedItem extends Component {
     deductQuantity = () => {
         this.setState(prevState => {
             if(prevState.quantity > 1) {
+                this.props.deductTotalProducts()
                 return {
                     quantity: prevState.quantity - 1,
                     itemTotal: prevState.itemTotal - this.props.price
@@ -38,7 +39,7 @@ class OrderedItem extends Component {
                 return null;
             }
         });
-        this.props.deductTotalProducts()
+      
         console.log(this.state.itemTotal)
     }
 
