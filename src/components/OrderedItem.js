@@ -47,7 +47,7 @@ class OrderedItem extends Component {
 
     
     render() {
-        const { image, description, size, price } = this.props;
+        const { image, description, size } = this.props;
         const { quantity, itemTotal } = this.state;
         const { addQuantity, deductQuantity } = this;
 

@@ -15,18 +15,21 @@ const productsArray = [
     description: "Vans - Zapatillas classic slip on",
     size: 36,
     price: 49.90,
+    id: 1
   },
   {
     image: vans_44,
     description: "Vans - Zapatillas classic slip on",
     size: 44,
-    price: 49.90
+    price: 49.90,
+    id: 2
   },
   {
     image: vans_39,
     description: "Vans - Zapatillas classic slip on",
     size: 39,
-    price: 49.90
+    price: 49.90,
+    id: 3
   },
 
 ]
@@ -82,7 +85,7 @@ class App extends Component {
 
           <div className="Shopping-bag__container">
             <div className="Shopping-bag__summary">
-              <p className="Item quantity">{`Tu cesta ${total} productos)`}</p>
+              <p className="Item quantity">{`Tu cesta (${total} productos)`}</p>
 
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
@@ -107,7 +110,6 @@ class App extends Component {
 
                   <div className="Purchase-button__container">
                     <button type="button" className="Purchase-button">comprar</button>
-               
                   </div>
               </div>
             </div>
