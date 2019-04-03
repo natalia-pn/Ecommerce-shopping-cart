@@ -7,7 +7,7 @@ import vans_44 from './images/vans-44.png';
 import vans_39 from './images/vans-39.png';
 import down from './images/down-arrow.svg';
 import OrderedItemsList from './components/OrderedItemsList';
-import './App.css';
+import './styles/App.scss';
 
 const productsList = [
   {
