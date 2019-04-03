@@ -7,23 +7,32 @@ class OrderedItem extends Component {
         this.state = {
           quantity: 1
         }
-    
-        this.addQuantity = this.addQuantity.bind(this);
-        this.deductQuantity = this.deductQuantity.bind(this);
       }
-    
-      addQuantity() {
-        this.setState({
-          quantity: this.state.quantity + 1
+
+    addQuantity = () => {
+        this.setState(prevState => {
+            if(prevState.quantity < 10) {
+                return {
+                    quantity: prevState.quantity + 1
+                }
+            } else {
+                return null;
+            }
         });
-      }
+    }
 
-      deductQuantity() {
-        this.setState({
-            quantity: this.state.quantity - 1
-          });
-      }
 
+    deductQuantity = () => {
+        this.setState(prevState => {
+            if(prevState.quantity > 1) {
+                return {
+                    quantity: prevState.quantity - 1
+                }
+            } else {
+                return null;
+            }
+        });
+    }
 
     
     render() {
