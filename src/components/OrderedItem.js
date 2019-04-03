@@ -8,19 +8,28 @@ class OrderedItem extends Component {
           quantity: 1
         }
     
-        this.addItem = this.addItem.bind(this);
+        this.addQuantity = this.addQuantity.bind(this);
+        this.deductQuantity = this.deductQuantity.bind(this);
       }
     
-      addItem() {
+      addQuantity() {
         this.setState({
           quantity: this.state.quantity + 1
         });
       }
+
+      deductQuantity() {
+        this.setState({
+            quantity: this.state.quantity - 1
+          });
+      }
+
+
     
     render() {
         const { image, description, size, price } = this.props;
         const { quantity } = this.state;
-        const { addItem } = this;
+        const { addQuantity, deductQuantity } = this;
         return(
             <div className="Order__summary">
                   <img className="Vans-picture" src={image} alt="Vans shoes"></img>
@@ -39,9 +48,9 @@ class OrderedItem extends Component {
                     <p className="Item__price">{price}</p>
 
                     <div className="Quantity-display__container">
-                      <button type="button" className="Quantity-increase__button" onClick={addItem}>+</button>
+                      <button type="button" className="Quantity-increase__button" onClick={addQuantity}>+</button>
                       <div className="Quantity-display__box">{`${quantity}`}</div>
-                      <button  type="button" className="Quantity-decrease__button">-</button>
+                      <button  type="button" className="Quantity-decrease__button" onClick={deductQuantity}>-</button>
                     </div>
                 </div> 
             </div>
