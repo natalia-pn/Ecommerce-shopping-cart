@@ -9,7 +9,7 @@ import down from './images/down-arrow.svg';
 import OrderedItem from './components/OrderedItem';
 import './App.css';
 
-const productsArray = [
+const productsList = [
   {
     image: vans_36,
     description: "Vans - Zapatillas classic slip on",
@@ -39,7 +39,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      total: 3
+      total: 3,
+      productsArray: productsList
     }
   }
 
@@ -60,10 +61,25 @@ class App extends Component {
       }
     });
   }
+
+  removeProduct = (e) => {
+    const { productsArray } = this.state;
+    const buttonValue = e.currentTarget.value;
+    console.log(buttonValue)
+
+    for (const product of productsArray) {
+      if(parseInt(buttonValue) === product.id) {
+        const index = productsList.findIndex(x => x.id  === parseInt(buttonValue));
+        productsList.splice(index, 1);
+      }
+    }
+    this.setState({productsArray: productsList})
+  }
+
   
   render() {
-    const { addTotalProducts, deductTotalProducts } = this;
-    const { total } = this.state;
+    const { addTotalProducts, deductTotalProducts, removeProduct } = this;
+    const { total, productsArray } = this.state;
 
     console.log(this.state.total)
     return (
@@ -91,7 +107,7 @@ class App extends Component {
                 <p className="Delivery-date">Entrega 15 de abril</p>
 
                 {productsArray.map((item, index) =>
-                  <OrderedItem key={index} image={item.image} description={item.description} size={item.size} price={item.price} addTotalProducts={addTotalProducts} deductTotalProducts={deductTotalProducts}/>)}
+                  <OrderedItem key={index} image={item.image} description={item.description} size={item.size} price={item.price} addTotalProducts={addTotalProducts} deductTotalProducts={deductTotalProducts} removeProduct={removeProduct} productId={item.id}/>)}
               
                   <div className="Promotional-code__container">
                     <p className="Promotional-code">Código promocional</p>

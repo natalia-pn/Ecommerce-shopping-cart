@@ -47,7 +47,7 @@ class OrderedItem extends Component {
 
     
     render() {
-        const { image, description, size } = this.props;
+        const { image, description, size, removeProduct, productId } = this.props;
         const { quantity, itemTotal } = this.state;
         const { addQuantity, deductQuantity } = this;
 
@@ -61,7 +61,7 @@ class OrderedItem extends Component {
                     <p className="Item__description">{description}</p>
 
                     <div className="Delete-action__container">
-                      <button type="button" className="Delete-action__button"><i className="far fa-trash-alt"></i></button>
+                      <button type="button" className="Delete-action__button" value={productId} onClick={removeProduct}><i className="far fa-trash-alt"></i></button>
 
                       <p className="Delete-action">Eliminar</p>
                     </div>
