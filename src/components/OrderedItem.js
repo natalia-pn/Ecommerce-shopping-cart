@@ -55,7 +55,9 @@ class OrderedItem extends Component {
 
         return(
             <div className="Order__summary">
-                  <img className="Vans-picture" src={image} alt="Vans shoes"></img>
+                <div className="Order__image-container">
+                    <img className="Vans-picture" src={image} alt="Vans shoes"></img>
+                </div>
               
                 <div className="Order__details">
                     <p className="Item__description">{description}</p>
@@ -63,18 +65,20 @@ class OrderedItem extends Component {
                     <div className="Delete-action__container">
                       <button type="button" className="Delete-action__button" value={productId} onClick={removeProduct}><i className="far fa-trash-alt"></i></button>
 
-                      <p className="Delete-action">Eliminar</p>
+                      {/* <p className="Delete-action">Eliminar</p> */}
                     </div>
 
                     <p className="Item__size">{`Talla: ${size} `}</p>
 
-                    <p className="Item__price">{total}</p>
-
                     <div className="Quantity-display__container">
-                      <button type="button" className="Quantity-increase__button" onClick={addQuantity}>+</button>
-                      <div className="Quantity-display__box">{`${quantity}`}</div>
-                      <button  type="button" className="Quantity-decrease__button" onClick={deductQuantity}>-</button>
+                      <button type="button" className="Quantity-increase__button Quantity" onClick={addQuantity}>+</button>
+
+                      <div className="Quantity-display__box Quantity">{`${quantity}`}</div>
+
+                      <button  type="button" className="Quantity-decrease__button Quantity" onClick={deductQuantity}>-</button>
                     </div>
+
+                    <p className="Item__price">{total}</p>
                 </div> 
             </div>
         );

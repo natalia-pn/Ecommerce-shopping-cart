@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'settings';
 @import 'header';
+@import 'main';
+
+.App {
+    font-family: 'Roboto', sans-serif;
+
+}
+
 
 .Vans-picture {
     height: 70px;

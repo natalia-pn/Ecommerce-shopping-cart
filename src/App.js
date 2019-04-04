@@ -99,7 +99,7 @@ class App extends Component {
 
           <div className="Shopping-bag__container">
             <div className="Shopping-bag__summary">
-              <p className="Item quantity">{`Tu cesta (${total} productos)`}</p>
+              <p className="Items-quantity">{`Tu cesta (${total} productos)`}</p>
 
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>

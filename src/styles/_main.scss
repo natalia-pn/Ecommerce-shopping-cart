@@ -1,0 +1,120 @@
+
+.Main-section {
+    display: flex;
+}
+.Products-display {
+    width: 905px;
+    height: 100vh;
+}
+
+.Open-bag__action-container {
+    width: 375px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+    display: none;
+}
+
+.Open-bag__trigger {
+    width: 50px;
+}
+
+.Shopping-bag__container {
+    width: 375px;
+    height: 100vh;
+    margin: 70px 0 17px;
+
+    background-color: green;
+}
+
+.Shopping-bag__summary {
+    padding-left: 15px;
+    color: $grey;
+    font-size: 14px;
+}
+
+.Items-quantity {
+    font-size: 20px;
+}
+
+.Orders-summary__container {
+   
+}
+
+.Delivery-date {
+    font-size: 18px;
+    border-bottom: solid $blue;
+    padding-bottom: 6px;
+    margin: 0 15px 21px 0;
+}
+
+.Order__summary {
+    height: 90px;
+    display: flex;
+    background-color: pink;
+}
+
+.Order__image-container {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-color: coral;
+}
+
+.Vans-picture {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.Order__details {
+    // width: 275px;
+    height: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua
+}
+
+.Item__description {
+    margin: 0 0 14px 0;
+    width: 166px;
+}
+
+.Delete-action__container {
+    width: 109px;
+    text-align: right;
+}
+
+.Delete-action__button {
+   margin-right: 15px;
+   border: none;
+   background: none;
+   padding: 0;
+}
+
+.Quantity-display__container {
+    display: flex;
+    margin: 0 58px 0 0;
+}
+
+.Quantity {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: solid 2px $blue; 
+}
+
+.Item__size {
+    margin-right: 26px;
+}
+
+.Item__price {
+
+    background-color: green;
+
+}
