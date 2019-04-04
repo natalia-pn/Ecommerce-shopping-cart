@@ -3,7 +3,7 @@
     display: flex;
 }
 .Products-display {
-    width: 905px;
+    width: 875px;
     height: 100vh;
 }
 
@@ -13,7 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: purple;
     display: none;
 }
 
@@ -24,14 +23,11 @@
 .Shopping-bag__container {
     width: 375px;
     height: 100vh;
-    margin: 70px 0 17px;
-
-    background-color: green;
+    margin: 70px 15px 17px;
 }
 
 .Shopping-bag__summary {
     padding-left: 15px;
-    color: $grey;
     font-size: 14px;
 }
 
@@ -39,28 +35,24 @@
     font-size: 20px;
 }
 
-.Orders-summary__container {
-   
-}
-
 .Delivery-date {
     font-size: 18px;
     border-bottom: solid $blue;
     padding-bottom: 6px;
-    margin: 0 15px 21px 0;
+    margin: 0 0 21px 0;
 }
 
 .Order__summary {
-    height: 90px;
+    height: 95px;
     display: flex;
-    background-color: pink;
+    padding-top: 20px;
+    border-bottom: solid $light-grey;
 }
 
 .Order__image-container {
     height: 90px;
     display: flex;
     align-items: center;
-    background-color: coral;
 }
 
 .Vans-picture {
@@ -70,11 +62,9 @@
 }
 
 .Order__details {
-    // width: 275px;
     height: 90px;
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua
 }
 
 .Item__description {
@@ -88,7 +78,6 @@
 }
 
 .Delete-action__button {
-   margin-right: 15px;
    border: none;
    background: none;
    padding: 0;
@@ -96,17 +85,22 @@
 
 .Quantity-display__container {
     display: flex;
-    margin: 0 58px 0 0;
+    height: 30px;
 }
 
 .Quantity {
     width: 30px;
-    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     border: solid 2px $blue; 
+    color: $dusty-blue;
+}
+
+.Quantity-display__box {
+    color: $black;
+    font-size: 12px;
 }
 
 .Item__size {
@@ -114,7 +108,7 @@
 }
 
 .Item__price {
-
-    background-color: green;
-
+    height: 16px;
+    width: 106px;
+    text-align: right;
 }
