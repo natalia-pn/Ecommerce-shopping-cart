@@ -22,9 +22,9 @@
 
 .Shopping-bag__container {
     width: 375px;
-    height: 100vh;
     margin: 70px 15px 17px;
 }
+
 
 .Shopping-bag__summary {
     padding-left: 15px;
@@ -37,7 +37,7 @@
 
 .Delivery-date {
     font-size: 18px;
-    border-bottom: solid $blue;
+    border-bottom: solid $dark-blue;
     padding-bottom: 6px;
     margin: 0 0 21px 0;
 }
@@ -94,8 +94,9 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: solid 2px $blue; 
+    border: solid 2px $dark-blue; 
     color: $dusty-blue;
+    outline: none;
 }
 
 .Quantity-display__box {
@@ -126,7 +127,7 @@
     width: 10px;
 }
 
-.Subtotal__container, .Total__container {
+.Subtotal__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -138,8 +139,37 @@
     margin-bottom: 10px;
 }
 
-.Subtotal__amount, .Total__amount {
+.Subtotal__amount {
     margin: 0;
+}
+
+.Total__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Total__amount {
+    margin: 0;
+    font-weight: 700;
+} 
+
+.Purchase-button__container {
+    width: 360px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-blue;
+}
+
+.Purchase-button {
+    background-color: $dark-blue;
+    border: none;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    outline: none;
 }
 
 
