@@ -11,31 +11,63 @@
 .Open-bag__action-container {
     width: 375px;
     height: 100vh;
+    margin-top: 75px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+}
+
+.Open-bag__action-container-none {
+    width: 375px;
+    height: 100vh;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
+    color: $black;
 }
 
+
+
 .Open-bag__trigger {
+    border: none;
+}
+
+.Open-bag__image {
+    height: 50px;
     width: 50px;
+}
+
+.Open-bag_call {
+    color: $dusty-blue;
 }
 
 .Shopping-bag__container {
     width: 375px;
     margin: 70px 15px 17px;
 
-    position: relative;
-    z-index: -1;
-    right: -650px;
+    // position: relative;
+    // z-index: -1;
+    // right: -650px;
     transition: all 2s ease-in;
     -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
     -moz-transition: all 2s ease-in-out; /** Firefox **/
     -o-transition: all 2s ease-in-out; /** Opera **/
+    display: none;
 }
 
 .Shopping-bag__container-in {
     right: 10px;
+    width: 375px;
+    margin: 70px 15px 17px;
+    transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
 }
 
 

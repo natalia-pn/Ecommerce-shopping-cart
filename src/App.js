@@ -40,7 +40,9 @@ class App extends Component {
 
     this.state = {
       total: 3,
-      productsArray: productsList
+      productsArray: productsList,
+      showBag: 'Shopping-bag__container',
+      actionContainer: 'Open-bag__action-container'
     }
   }
 
@@ -76,9 +78,17 @@ class App extends Component {
     this.setState({productsArray: productsList})
   }
 
+  triggerShoppingBag = () => {
+    console.log('click')
+    this.setState(prevState => ({
+      showBag: 'Shopping-bag__container-in',
+      actionContainer: 'Open-bag__action-container-none'
+    }));
+  }
+
   render() {
-    const { addTotalProducts, deductTotalProducts, removeProduct } = this;
-    const { total, productsArray } = this.state;
+    const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
+    const { total, productsArray, showBag, actionContainer } = this.state;
 
     return (
       <div className="App">
@@ -91,13 +101,13 @@ class App extends Component {
         <main className="Main-section">
           <img className="Products-display" src={products} alt="products display"></img>
 
-          <div className="Open-bag__action-container">
-            <img className="Open-bag__trigger" src={bag} alt="shopping bag"></img>
+          <div className={actionContainer}>
+            <button className="Open-bag__trigger" onClick={triggerShoppingBag}><img className="Open-bag__image" src={bag} alt="shopping bag"></img></button>
 
             <p className="Open-bag_call">Open bag</p>
           </div>
 
-          <div className="Shopping-bag__container">
+          <div className={showBag}>
             <div className="Shopping-bag__summary">
               <p className="Items-quantity">{`Tu cesta (${total} productos)`}</p>
 
