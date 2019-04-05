@@ -5,7 +5,7 @@
 .Products-display {
     width: 875px;
     height: 100vh;
-    margin-top: 75px;
+    margin: 75px 5px 0 0;
 }
 
 .Open-bag__action-container {
@@ -24,6 +24,18 @@
 .Shopping-bag__container {
     width: 375px;
     margin: 70px 15px 17px;
+
+    position: relative;
+    z-index: -1;
+    right: -650px;
+    transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+}
+
+.Shopping-bag__container-in {
+    right: 10px;
 }
 
 
@@ -31,6 +43,7 @@
     padding-left: 15px;
     font-size: 14px;
 }
+
 
 .Items-quantity {
     font-size: 20px;
