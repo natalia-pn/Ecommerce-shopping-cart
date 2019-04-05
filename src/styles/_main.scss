@@ -125,3 +125,19 @@
     height: 10px;
     width: 10px;
 }
+
+.Subtotal__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:  solid $light-grey;
+}
+
+.Subtotal {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.Subtotal__amount {
+    margin: 0;
+}
