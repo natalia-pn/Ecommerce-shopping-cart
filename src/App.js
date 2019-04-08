@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import user from './images/user.svg';
 import bag from './images/bag.svg';
-import products from './images/products.png';
+import products from './images/products-display.png';
 import vans_36 from './images/vans-36.png';
 import vans_44 from './images/vans-44.png';
 import vans_39 from './images/vans-39.png';
@@ -42,7 +42,7 @@ class App extends Component {
       total: 3,
       productsArray: productsList,
       showBagClass: 'Shopping-bag__container',
-      actionContainer: 'Open-bag__action-container',
+      productsDisplay: 'Products-display',
       showBag: false
     }
   }
@@ -92,20 +92,20 @@ class App extends Component {
     if (showBag === true) {
       this.setState(prevState => ({
         showBagClass: 'Shopping-bag__container-in',
-        actionContainer: 'Open-bag__action-container-none'
+        productsDisplay: 'Products-display--shared'
       }));
 
     } else {
       this.setState(prevState => ({
         showBagClass: 'Shopping-bag__container',
-        actionContainer: 'Open-bag__action-container'
+        productsDisplay: 'Products-display'
       }));
     }
   }
 
   render() {
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
-    const { total, productsArray, showBagClass, actionContainer } = this.state;
+    const { total, productsArray, showBagClass, productsDisplay } = this.state;
 
     return (
       <div className="App">
@@ -116,13 +116,7 @@ class App extends Component {
         </header>
 
         <main className="Main-section">
-          <img className="Products-display" src={products} alt="products display"></img>
-
-          <div className={actionContainer}>
-            <button className="Open-bag__trigger" onClick={triggerShoppingBag}><img className="Open-bag__image" src={bag} alt="shopping bag"></img></button>
-
-            <p className="Open-bag_call">Open bag</p>
-          </div>
+          <img className={productsDisplay} src={products} alt="products display"></img>
 
           <div className={showBagClass}>
             <div className="Shopping-bag__summary">

@@ -1,34 +1,19 @@
 .Main-section {
     display: flex;
+    justify-content: center;
 }
 
 .Products-display {
-    width: 875px;
+    width: 1150px;
     height: 100vh;
-    margin: 75px 5px 0 0;
+    margin: 75px 25px 0;
+    background-color: orange;
 }
 
-.Open-bag__action-container {
-    width: 375px;
+.Products-display--shared {
+    width: 840px;
     height: 100vh;
-    margin-top: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: $black;
-}
-
-.Open-bag__action-container-none {
-    width: 375px;
-    height: 100vh;
-    margin-top: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    color: $black;
+    margin: 75px 0 0 15px;
 }
 
 .Open-bag__trigger {
@@ -66,7 +51,6 @@
 }
 
 .Shopping-bag__summary {
-    padding-left: 15px;
     font-size: 14px;
 }
 
@@ -74,6 +58,10 @@
     font-size: 20px;
     margin: 20px 0 17px;
 }
+
+// .Orders-summary__container {
+//     margin-right: 25px;
+// }
 
 .Delivery-date {
     font-size: 18px;
