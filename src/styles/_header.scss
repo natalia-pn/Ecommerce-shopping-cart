@@ -1,24 +1,49 @@
 .App-header {
+    background-color: purple;
     width: 100vw;
-    height: 76px;
+    height: 46px;
     position: fixed;
-    text-align: right;
-    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // background-color: $white;
+
+    @media all and (min-width:1270px) {
+        height: 76px;
+    }
 }
 .User-account {
-    width: 30px;
-    height: 30px;
-    margin: 24px 11px 24px 0;
-
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    
+    @media all and (min-width:1270px) {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .Bag__trigger {
     border: none;
     outline: none;
+    width: 20px;
+    height: 20px;
+    background: none;
+    padding: 0;
+    margin-right: 35px;
+
+    @media all and (min-width:1270px) {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .Shopping-bag {
-    width: 30px;
-    height: 30px;
-    margin: 24px 12px 24px 0;
+    width: 20px;
+    height: 20px;
+   
+    @media all and (min-width:1270px) {
+        width: 30px;
+        height: 30px;
+    }
 }

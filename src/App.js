@@ -46,7 +46,7 @@ class App extends Component {
         49.90,
         49.90
       ],
-      totalPrice: 149.70,
+      totalPrice: (149.70).toFixed(2),
       productsArray: productsList,
       showBagClass: 'Shopping-bag__container',
       productsDisplay: 'Products-display',
