@@ -39,10 +39,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-      total: 3,
-      startingPrice: 149.70,
-      totalPrice: '',
-      totalItemPrice: '',
+      itemsQuantity: 3,
+      itemPrice: '',
+      itemsPricesArray: [
+        49.90,
+        49.90,
+        49.90
+      ],
+      totalPrice: 149.70,
       productsArray: productsList,
       showBagClass: 'Shopping-bag__container',
       productsDisplay: 'Products-display',
@@ -51,24 +55,24 @@ class App extends Component {
   }
 
   addTotalProducts = (buttonValue) => {
-    let totalPrice;
+    let itemPrice;
+
     for (const product of this.state.productsArray) {
       if(parseInt(buttonValue) === product.id) {
         const index = this.state.productsArray.findIndex(x => x.id  === parseInt(buttonValue));
-           totalPrice = this.state.productsArray[index].price;
 
-          console.log( totalPrice);
+        itemPrice = this.state.productsArray[index].price;
+
+        this.state.itemsPricesArray.push(itemPrice);
       }
     }
+    const totalPriceSum =  this.state.itemsPricesArray.reduce((a, b) => a + b).toFixed(2)
 
     this.setState(prevState => ({
-      total: prevState.total + 1,
-      totalItemPrice: (prevState.totalPrice * this.state.total) + this.state.startingPrice
+      itemsQuantity: prevState.itemsQuantity + 1,
+      totalPrice: totalPriceSum
     }));
-
-    console.log(this.state.totalItemPrice)
   }
-
 
   deductTotalProducts = () => {
     this.setState(prevState => {
@@ -122,7 +126,7 @@ class App extends Component {
 
   render() {
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
-    const { total, productsArray, showBagClass, productsDisplay } = this.state;
+    const { itemsQuantity, productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
 
     return (
       <div className="App">
@@ -137,7 +141,7 @@ class App extends Component {
 
           <div className={showBagClass}>
             <div className="Shopping-bag__summary">
-              <p className="Items-quantity">{`Tu cesta (${total} productos)`}</p>
+              <p className="Items-quantity">{`Tu cesta (${itemsQuantity} productos)`}</p>
 
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
@@ -155,12 +159,12 @@ class App extends Component {
 
                 <div className="Subtotal__container">
                   <p className="Subtotal">Subtotal</p>
-                  <p className="Subtotal__amount">xxx€</p>
+                  <p className="Subtotal__amount">{`${totalPrice}€`}</p>
                 </div>                     
 
                 <div className="Total__container">
                   <p className="Total">Total</p>
-                  <p className="Total__amount">xxx€</p>
+                  <p className="Total__amount">{`${totalPrice}€`}</p>
                 </div>
 
                 <div className="Purchase-button__container">

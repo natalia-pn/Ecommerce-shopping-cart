@@ -12,7 +12,6 @@ class OrderedItem extends Component {
       }
 
     addQuantity = (e) => {
-
         const addButtonValue = e.currentTarget.value;
 
         console.log(addButtonValue)
@@ -27,7 +26,9 @@ class OrderedItem extends Component {
             } else {
                 return null;
             }
+           
         });
+        console.log(this.state.itemTotal)
     }
 
 
@@ -80,7 +81,7 @@ class OrderedItem extends Component {
                       <button  type="button" className="Quantity-decrease__button Quantity" value={productId} onClick={deductQuantity}>-</button>
                     </div>
 
-                    <p className="Item__price">{total}</p>
+                    <p className="Item__price">{`${total}€`}</p>
                 </div> 
             </div>
         );
