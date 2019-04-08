@@ -32,10 +32,12 @@ class OrderedItem extends Component {
     }
 
 
-    deductQuantity = () => {
+    deductQuantity = (e) => {
+        const addButtonValue = e.currentTarget.value;
+
         this.setState(prevState => {
             if(prevState.quantity > 1) {
-                this.props.deductTotalProducts()
+                this.props.deductTotalProducts(addButtonValue)
                 return {
                     quantity: prevState.quantity - 1,
                     itemTotal: prevState.itemTotal - this.props.price

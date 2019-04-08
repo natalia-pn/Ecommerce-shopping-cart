@@ -74,16 +74,21 @@ class App extends Component {
     }));
   }
 
-  deductTotalProducts = () => {
-    this.setState(prevState => {
-      if(prevState.total > 3) {
-          return {
-            total: prevState.total - 1
-          }
-      } else {
-        return null;
+  deductTotalProducts = (buttonValue) => {
+    let itemPrice;
+
+    for (const product of this.state.productsArray) {
+      if(parseInt(buttonValue) === product.id) {
+        const index = this.state.productsArray.findIndex(x => x.id  === parseInt(buttonValue));
+
+        itemPrice = this.state.productsArray[index].price;
       }
-    });
+    }
+
+    this.setState(prevState => ({
+      itemsQuantity: prevState.itemsQuantity.total - 1,
+      totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
+    }));
   }
 
   removeProduct = (e) => {
@@ -125,6 +130,8 @@ class App extends Component {
   }
 
   render() {
+
+    console.log(this.state.totalPrice)
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
     const { itemsQuantity, productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
 
