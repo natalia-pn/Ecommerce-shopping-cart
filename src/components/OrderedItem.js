@@ -50,9 +50,6 @@ class OrderedItem extends Component {
         console.log(this.state.itemTotal)
     }
 
-
-
-    
     render() {
         const { image, description, size, removeProduct, productId } = this.props;
         const { quantity, itemTotal } = this.state;
@@ -73,7 +70,7 @@ class OrderedItem extends Component {
                       <button type="button" className="Delete-action__button" value={productId} onClick={removeProduct}><i className="far fa-trash-alt"></i></button>
                     </div>
 
-                    <p className="Item__size">{`Talla: ${size} `}</p>
+                    <p className="Item__size">{`Talla: ${size}`}</p>
 
                     <div className="Quantity-display__container">
                       <button type="button" className="Quantity-increase__button Quantity" value={productId} onClick={addQuantity}>+</button>

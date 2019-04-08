@@ -84,7 +84,6 @@ class App extends Component {
         itemPrice = this.state.productsArray[index].price;
       }
     }
-
     this.setState(prevState => ({
       itemsQuantity: prevState.itemsQuantity - 1,
       totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
@@ -92,17 +91,23 @@ class App extends Component {
   }
 
   removeProduct = (e) => {
+    let itemPrice;
     const { productsArray } = this.state;
     const buttonValue = e.currentTarget.value;
-    console.log(buttonValue)
 
     for (const product of productsArray) {
       if(parseInt(buttonValue) === product.id) {
-        const index = productsList.findIndex(x => x.id  === parseInt(buttonValue));
-        productsList.splice(index, 1);
+        const index = productsArray.findIndex(x => x.id  === parseInt(buttonValue));
+
+        itemPrice = productsArray[index].price;
+
+        productsArray.splice(index, 1);
       }
     }
-    this.setState({productsArray: productsList})
+    this.setState(prevState => ({
+      itemsQuantity: prevState.itemsQuantity - 1,
+      totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
+    }));
   }
 
   toggleBag = () => {
@@ -130,8 +135,6 @@ class App extends Component {
   }
 
   render() {
-
-    console.log(this.state.totalPrice)
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
     const { itemsQuantity, productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
 
