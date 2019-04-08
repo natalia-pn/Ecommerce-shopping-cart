@@ -40,6 +40,9 @@ class App extends Component {
 
     this.state = {
       total: 3,
+      startingPrice: 149.70,
+      totalPrice: '',
+      totalItemPrice: '',
       productsArray: productsList,
       showBagClass: 'Shopping-bag__container',
       productsDisplay: 'Products-display',
@@ -47,11 +50,25 @@ class App extends Component {
     }
   }
 
-  addTotalProducts = () => {
+  addTotalProducts = (buttonValue) => {
+    let totalPrice;
+    for (const product of this.state.productsArray) {
+      if(parseInt(buttonValue) === product.id) {
+        const index = this.state.productsArray.findIndex(x => x.id  === parseInt(buttonValue));
+           totalPrice = this.state.productsArray[index].price;
+
+          console.log( totalPrice);
+      }
+    }
+
     this.setState(prevState => ({
-      total: prevState.total + 1
+      total: prevState.total + 1,
+      totalItemPrice: (prevState.totalPrice * this.state.total) + this.state.startingPrice
     }));
+
+    console.log(this.state.totalItemPrice)
   }
+
 
   deductTotalProducts = () => {
     this.setState(prevState => {

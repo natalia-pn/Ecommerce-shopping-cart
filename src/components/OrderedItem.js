@@ -11,10 +11,15 @@ class OrderedItem extends Component {
         }
       }
 
-    addQuantity = () => {
+    addQuantity = (e) => {
+
+        const addButtonValue = e.currentTarget.value;
+
+        console.log(addButtonValue)
+
         this.setState(prevState => {
             if(prevState.quantity < 10) {
-                this.props.addTotalProducts()
+                this.props.addTotalProducts(addButtonValue)
                 return {
                     quantity: prevState.quantity + 1,
                     itemTotal: prevState.itemTotal + this.props.price
@@ -23,7 +28,6 @@ class OrderedItem extends Component {
                 return null;
             }
         });
-        console.log(this.state.itemTotal)
     }
 
 
@@ -64,18 +68,16 @@ class OrderedItem extends Component {
 
                     <div className="Delete-action__container">
                       <button type="button" className="Delete-action__button" value={productId} onClick={removeProduct}><i className="far fa-trash-alt"></i></button>
-
-                      {/* <p className="Delete-action">Eliminar</p> */}
                     </div>
 
                     <p className="Item__size">{`Talla: ${size} `}</p>
 
                     <div className="Quantity-display__container">
-                      <button type="button" className="Quantity-increase__button Quantity" onClick={addQuantity}>+</button>
+                      <button type="button" className="Quantity-increase__button Quantity" value={productId} onClick={addQuantity}>+</button>
 
                       <div className="Quantity-display__box Quantity">{`${quantity}`}</div>
 
-                      <button  type="button" className="Quantity-decrease__button Quantity" onClick={deductQuantity}>-</button>
+                      <button  type="button" className="Quantity-decrease__button Quantity" value={productId} onClick={deductQuantity}>-</button>
                     </div>
 
                     <p className="Item__price">{total}</p>

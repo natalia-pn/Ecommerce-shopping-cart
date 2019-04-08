@@ -8,9 +8,9 @@ class OrderedItemsList extends Component {
 
         return(
             <Fragment>
-                {productsArray.map((item, index) =>
+                {productsArray.map(item =>
                   <OrderedItem 
-                    key={index} 
+                    key={item.id} 
                     image={item.image} 
                     description={item.description} 
                     size={item.size} price={item.price} 
