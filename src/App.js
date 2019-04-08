@@ -41,8 +41,9 @@ class App extends Component {
     this.state = {
       total: 3,
       productsArray: productsList,
-      showBag: 'Shopping-bag__container',
-      actionContainer: 'Open-bag__action-container'
+      showBagClass: 'Shopping-bag__container',
+      actionContainer: 'Open-bag__action-container',
+      showBag: false
     }
   }
 
@@ -78,24 +79,40 @@ class App extends Component {
     this.setState({productsArray: productsList})
   }
 
-  triggerShoppingBag = () => {
-    console.log('click')
-    this.setState(prevState => ({
-      showBag: 'Shopping-bag__container-in',
-      actionContainer: 'Open-bag__action-container-none'
+  toggleBag = () => {
+    this.setState(prevState=> ({
+      showBag: !this.state.showBag
     }));
+  }
+
+  triggerShoppingBag = () => {
+    const { showBag } = this.state;
+    this.toggleBag();
+
+    if (showBag === true) {
+      this.setState(prevState => ({
+        showBagClass: 'Shopping-bag__container-in',
+        actionContainer: 'Open-bag__action-container-none'
+      }));
+
+    } else {
+      this.setState(prevState => ({
+        showBagClass: 'Shopping-bag__container',
+        actionContainer: 'Open-bag__action-container'
+      }));
+    }
   }
 
   render() {
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag } = this;
-    const { total, productsArray, showBag, actionContainer } = this.state;
+    const { total, productsArray, showBagClass, actionContainer } = this.state;
 
     return (
       <div className="App">
         <header className="App-header">
           <img src={user} className="User-account" alt="user account"></img>
 
-          <img src={bag} className="Shopping-bag" alt="shopping bag"></img>
+          <button className="Bag__trigger" onClick={triggerShoppingBag}><img src={bag} className="Shopping-bag" alt="shopping bag"></img></button>
         </header>
 
         <main className="Main-section">
@@ -107,7 +124,7 @@ class App extends Component {
             <p className="Open-bag_call">Open bag</p>
           </div>
 
-          <div className={showBag}>
+          <div className={showBagClass}>
             <div className="Shopping-bag__summary">
               <p className="Items-quantity">{`Tu cesta (${total} productos)`}</p>
 
