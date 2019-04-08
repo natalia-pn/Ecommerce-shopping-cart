@@ -86,7 +86,7 @@ class App extends Component {
     }
 
     this.setState(prevState => ({
-      itemsQuantity: prevState.itemsQuantity.total - 1,
+      itemsQuantity: prevState.itemsQuantity - 1,
       totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
     }));
   }
