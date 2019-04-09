@@ -17,7 +17,7 @@ class OrderedItemsList extends Component {
                     addTotalProducts={addTotalProducts} 
                     deductTotalProducts={deductTotalProducts} 
                     removeProduct={removeProduct} 
-                    productId={item.id}/>)}
+                    productId={item.id} />)}
             </Fragment>
         );
     }

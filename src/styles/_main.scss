@@ -4,13 +4,12 @@
 }
 
 .Products-display {
-    width: 380px;
+    width: 310px;
     height: 100vh;
     margin: 46px 0 0;
        
     @media all and (min-width:1270px) {
         width: 1150px;
-        height: 100vh;
         margin: 75px 25px 0;
     }
 }
@@ -26,41 +25,33 @@
 }
 
 .Shopping-bag__container {
-        width: 375px;
-        margin: 30px 15px 17px;
-        transition: all 2s ease-in;
-        -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
-        -moz-transition: all 2s ease-in-out; /** Firefox **/
-        -o-transition: all 2s ease-in-out; /** Opera **/
-        display: none;
+    width: 375px;
+    margin: 30px 15px 17px;
+    transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+    display: none;
 
     @media all and (min-width:1270px) {
-        width: 375px;
         margin: 70px 15px 17px;
-        transition: all 2s ease-in;
-        -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
-        -moz-transition: all 2s ease-in-out; /** Firefox **/
-        -o-transition: all 2s ease-in-out; /** Opera **/
-        display: none;
     }
 }
 
 .Shopping-bag__container-in {
-    // width: 375px;
+    width: 310px;
     margin: 70px 15px 17px;
     transition: all 2s ease-in;
     -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
     -moz-transition: all 2s ease-in-out; /** Firefox **/
     -o-transition: all 2s ease-in-out; /** Opera **/
+    
+    @media all and (min-width: 400px) {
+        width: 375px;
+    }
 
     @media all and (min-width:1270px) {
         right: 10px;
-        width: 375px;
-        margin: 70px 15px 17px;
-        transition: all 2s ease-in;
-        -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
-        -moz-transition: all 2s ease-in-out; /** Firefox **/
-        -o-transition: all 2s ease-in-out; /** Opera **/
     }
 }
 
@@ -73,8 +64,12 @@
 }
 
 .Items-quantity {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 7px;
+
+    @media all and(min-width: 400px) {
+        font-size: 16px;
+    }
 
     @media all and(min-width: 1270px) {
         font-size: 20px;
@@ -83,10 +78,14 @@
 }
 
 .Delivery-date {
-    font-size: 14px;
+    font-size: 12px;
     border-bottom: solid 1px $dark-blue;
     padding-bottom: 6px;
     margin: 0;
+
+    @media all and(min-width: 400px) {
+        font-size: 14px;
+    }
 
     @media all and(min-width: 1270px) {
         font-size: 18px;
@@ -131,13 +130,23 @@
 }
 
 .Item__description {
-    width: 166px;
+    width: 124px;   
     margin: 0;
+
+    @media all and (min-width: 400px) {
+        width: 166px;
+    }
+   
 }
 
 .Delete-action__container {
-    width: 118px;
+    width: 96px;
     text-align: right;
+
+    @media all and (min-width: 400px) {
+        width: 118px;
+    }
+
     @media all and (min-width: 1270px) {
         width: 109px;
     }
@@ -147,24 +156,29 @@
    border: none;
    background: none;
    padding: 0;
+   outline: none;
 }
 
 .far {
-    font-size: 15px;
+    font-size: 12px;
 
     @media all and (min-width: 1270px) {
-       font-size: 15PX;
+       font-size: 15px;
     }
 }
 
 .Quantity-display__container {
     display: flex;
-    height: 30px;
-    margin: 8px 0 25px;
+    margin: 22px 0 25px;
+   
+    @media all and (min-width: 400px) {
+        margin: 8px 0 25px;
+    }
 }
 
 .Quantity {
-    width: 30px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,6 +186,11 @@
     border: solid 2px $dark-blue; 
     color: $dusty-blue;
     outline: none;
+
+    @media all and (min-width: 400px) {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .Quantity-display__box {
@@ -184,7 +203,11 @@
 }
 
 .Item__size {
-    margin: 14px 60px 0 0;
+    margin: 28px 46px 0 0;
+
+    @media all and (min-width: 400px) {
+        margin: 14px 60px 0 0;
+    }
 
     @media all and (min-width1270px) {
         margin: 14px 26px 0 0;
@@ -192,10 +215,14 @@
 }
 
 .Item__price {
-    height: 16px;
-    width: 90px;
+    width: 76px;
     text-align: right;
-    margin: 14px 0 0;
+    margin: 28px 0 0;
+    
+    @media all and (min-width: 400px) {
+        width: 90px;
+        margin: 14px 0 0;
+    }
 
     @media all and (min-width: 1270px) {
         width: 82px;
@@ -269,11 +296,16 @@
 } 
 
 .Purchase-button__container {
-    width: 375px;
-    height: 35px;
+    width: 310px;
     display: flex;
     justify-content: center;
     background-color: $dark-blue;
+    margin: auto;
+    
+    @media all and (min-width: 400px) {
+    width: 375px;
+    height: 35px;
+    }
 
     @media all and (min-width: 1270px) {
         height: 50px;
@@ -281,6 +313,7 @@
 }
 
 .Purchase-button {
+    text-align: center;
     background-color: $dark-blue;
     border: none;
     color: $white;

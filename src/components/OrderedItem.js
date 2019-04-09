@@ -26,9 +26,7 @@ class OrderedItem extends Component {
             } else {
                 return null;
             }
-           
         });
-        console.log(this.state.itemTotal)
     }
 
 
@@ -46,8 +44,6 @@ class OrderedItem extends Component {
                 return null;
             }
         });
-      
-        console.log(this.state.itemTotal)
     }
 
     render() {
