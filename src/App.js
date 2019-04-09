@@ -10,6 +10,7 @@ import OrderedItemsList from './components/OrderedItemsList';
 import Header from './components/Header';
 import './styles/App.scss';
 import PromotionalCode from './components/PromotionalCode';
+import Subtotal from './components/Subtotal';
 
 const productsList = [
   {
@@ -162,10 +163,7 @@ class App extends Component {
               
                 <PromotionalCode down={down}/>
 
-                <div className="Subtotal__container">
-                  <p className="Subtotal">Subtotal</p>
-                  <p className="Subtotal__amount">{`${totalPrice}€`}</p>
-                </div>                     
+                <Subtotal totalPrice={totalPrice} />                 
 
                 <div className="Total__container">
                   <p className="Total">Total</p>
