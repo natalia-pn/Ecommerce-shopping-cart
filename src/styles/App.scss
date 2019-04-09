@@ -2,18 +2,13 @@
 @import 'settings';
 @import 'header';
 @import 'main';
+@import 'ordered-item';
+@import 'promotional-code';
+@import 'subtotal-container';
+@import 'total-container';
+@import 'purchase-button';
 
 .App {
     font-family: 'Roboto', sans-serif;
-
 }
 
-
-.Vans-picture {
-    height: 70px;
-    width: 70px;
-}
-
-.far {
-    font-size: 15px;
-}

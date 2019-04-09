@@ -1,0 +1,23 @@
+.Subtotal__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:  solid 1px $light-grey;
+
+    @media all and (min-width: 992px) {
+        border-bottom: solid $light-grey;
+    }
+}
+
+.Subtotal {
+    font-size: 14px;
+    margin:14px 0 10px;
+
+    @media all and (min-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+.Subtotal__amount {
+    margin: 0;
+}

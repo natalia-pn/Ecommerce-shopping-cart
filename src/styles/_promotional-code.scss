@@ -1,0 +1,21 @@
+.Promotional-code__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border-bottom: solid 1px $light-grey;
+
+    @media all and (min-width: 992px) {
+        font-size: 18px;
+        border-bottom: solid $light-grey;
+    }
+}
+
+.Promotional-code__selection {
+    height: 10px;
+    width: 10px;
+}
+
+.Promotional-code {
+    margin: 17px 0;
+}

@@ -1,0 +1,33 @@
+.Purchase-button__container {
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-blue;
+    margin: auto;
+    
+    @media all and (min-width: 400px) {
+    width: 375px;
+    height: 35px;
+    }
+
+    @media all and (min-width: 992px) {
+        height: 50px;
+    }
+}
+
+.Purchase-button {
+    text-align: center;
+    background-color: $dark-blue;
+    border: none;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    outline: none;
+
+    @media all and (min-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+
