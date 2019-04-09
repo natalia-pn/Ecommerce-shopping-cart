@@ -8,16 +8,17 @@
     justify-content: flex-end;
     // background-color: $white;
 
-    @media all and (min-width:1270px) {
+    @media all and (min-width:768px) {
         height: 76px;
     }
 }
+
 .User-account {
     width: 20px;
     height: 20px;
     margin-right: 12px;
     
-    @media all and (min-width:1270px) {
+    @media all and (min-width:768px) {
         width: 30px;
         height: 30px;
     }
@@ -32,7 +33,7 @@
     padding: 0;
     margin-right: 35px;
 
-    @media all and (min-width:1270px) {
+    @media all and (min-width:768px) {
         width: 30px;
         height: 30px;
     }
@@ -42,7 +43,7 @@
     width: 20px;
     height: 20px;
    
-    @media all and (min-width:1270px) {
+    @media all and (min-width:768px) {
         width: 30px;
         height: 30px;
     }
