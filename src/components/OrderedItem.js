@@ -83,7 +83,7 @@ class OrderedItem extends Component {
     }
 }
 
-OrderedItem.propTypes = {
+OrderedItem.propTypes = {   
     image: PropTypes.string,
     description: PropTypes.string,
     size: PropTypes.number,

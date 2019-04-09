@@ -9,6 +9,7 @@ import down from './images/down-arrow.svg';
 import OrderedItemsList from './components/OrderedItemsList';
 import Header from './components/Header';
 import './styles/App.scss';
+import PromotionalCode from './components/PromotionalCode';
 
 const productsList = [
   {
@@ -159,10 +160,7 @@ class App extends Component {
                   removeProduct={removeProduct} 
                   productsArray={productsArray} />
               
-                <div className="Promotional-code__container">
-                  <p className="Promotional-code">Código promocional</p>
-                  <img className="Promotional-code__selection" src={down} alt="selection arrow"></img>
-                </div>
+                <PromotionalCode down={down}/>
 
                 <div className="Subtotal__container">
                   <p className="Subtotal">Subtotal</p>
