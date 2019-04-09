@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Total extends Component {
+class TotalContainer extends Component {
     render() {
         const { totalPrice } = this.props;
         
@@ -14,8 +14,8 @@ class Total extends Component {
     }
 }
 
-Total.propTypes = {
+TotalContainer.propTypes = {
     totalPrice: PropTypes.string,
 }
 
-export default Total;
+export default TotalContainer;

@@ -10,8 +10,9 @@ import OrderedItemsList from './components/OrderedItemsList';
 import Header from './components/Header';
 import './styles/App.scss';
 import PromotionalCode from './components/PromotionalCode';
-import Subtotal from './components/Subtotal';
-import Total from './components/Total';
+import SubtotalContainer from './components/SubtotalContainer';
+import TotalContainer from './components/TotalContainer';
+import PurchaseButton from './components/PurchaseButton';
 
 const productsList = [
   {
@@ -164,13 +165,11 @@ class App extends Component {
               
                 <PromotionalCode down={down} />
 
-                <Subtotal totalPrice={totalPrice} />                 
+                <SubtotalContainer totalPrice={totalPrice} />                 
 
-                <Total totalPrice={totalPrice} />
+                <TotalContainer totalPrice={totalPrice} />
 
-                <div className="Purchase-button__container">
-                  <button type="button" className="Purchase-button">comprar</button>
-                </div>
+                <PurchaseButton />
               </div>
             </div>
           </div>
