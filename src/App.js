@@ -11,6 +11,7 @@ import Header from './components/Header';
 import './styles/App.scss';
 import PromotionalCode from './components/PromotionalCode';
 import Subtotal from './components/Subtotal';
+import Total from './components/Total';
 
 const productsList = [
   {
@@ -161,14 +162,11 @@ class App extends Component {
                   removeProduct={removeProduct} 
                   productsArray={productsArray} />
               
-                <PromotionalCode down={down}/>
+                <PromotionalCode down={down} />
 
                 <Subtotal totalPrice={totalPrice} />                 
 
-                <div className="Total__container">
-                  <p className="Total">Total</p>
-                  <p className="Total__amount">{`${totalPrice}€`}</p>
-                </div>
+                <Total totalPrice={totalPrice} />
 
                 <div className="Purchase-button__container">
                   <button type="button" className="Purchase-button">comprar</button>
