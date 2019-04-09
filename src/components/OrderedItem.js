@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class OrderedItem extends Component {
     constructor(props) {
@@ -14,21 +14,20 @@ class OrderedItem extends Component {
     addQuantity = (e) => {
         const addButtonValue = e.currentTarget.value;
 
-        console.log(addButtonValue)
-
         this.setState(prevState => {
             if(prevState.quantity < 10) {
                 this.props.addTotalProducts(addButtonValue)
+
                 return {
                     quantity: prevState.quantity + 1,
                     itemTotal: prevState.itemTotal + this.props.price
                 }
+                
             } else {
                 return null;
             }
         });
     }
-
 
     deductQuantity = (e) => {
         const addButtonValue = e.currentTarget.value;
@@ -36,10 +35,12 @@ class OrderedItem extends Component {
         this.setState(prevState => {
             if(prevState.quantity > 1) {
                 this.props.deductTotalProducts(addButtonValue)
+
                 return {
                     quantity: prevState.quantity - 1,
                     itemTotal: prevState.itemTotal - this.props.price
                 }
+
             } else {
                 return null;
             }
@@ -50,7 +51,6 @@ class OrderedItem extends Component {
         const { image, description, size, removeProduct, productId } = this.props;
         const { quantity, itemTotal } = this.state;
         const { addQuantity, deductQuantity } = this;
-
         const total = itemTotal.toFixed(2);
 
         return(
@@ -81,6 +81,14 @@ class OrderedItem extends Component {
             </div>
         );
     }
+}
+
+OrderedItem.propTypes = {
+    image: PropTypes.string,
+    description: PropTypes.string,
+    size: PropTypes.number,
+    removeProduct:PropTypes.func,
+    productId: PropTypes.number
 }
 
 export default OrderedItem;
