@@ -7,6 +7,7 @@ import vans_44 from './images/vans-44.png';
 import vans_39 from './images/vans-39.png';
 import down from './images/down-arrow.svg';
 import OrderedItemsList from './components/OrderedItemsList';
+import Header from './components/Header';
 import './styles/App.scss';
 
 const productsList = [
@@ -140,11 +141,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={user} className="User-account" alt="user account"></img>
-
-          <button className="Bag__trigger" onClick={triggerShoppingBag}><img src={bag} className="Shopping-bag" alt="shopping bag"></img></button>
-        </header>
+        <Header user={user} triggerShoppingBag={triggerShoppingBag} bag={bag} />
 
         <main className="Main-section">
           <img className={productsDisplay} src={products} alt="products display"></img>
