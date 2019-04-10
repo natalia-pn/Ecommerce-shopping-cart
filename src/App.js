@@ -68,15 +68,7 @@ class App extends Component {
     });
   
     this.setState({productsArray : newProductsArray});
-    console.log(newProductsArray)
   }
-
-
-  // addTotalProducts = (buttonValue) => {
-  //   // const totalPriceSum =  this.state.itemsPricesArray.reduce((a, b) => a + b).toFixed(2)
-
-
-  // }
 
 
   deductQuantity = (e) => {
@@ -142,9 +134,12 @@ class App extends Component {
 
   render() {
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag, addQuantity, deductQuantity } = this;
-    const { productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
+    const { productsArray, showBagClass, productsDisplay } = this.state;
 
     const totalItems =  productsArray.reduce((acumulador, { quantity }) => acumulador + quantity, 0)
+
+    const productsTotalAmount = productsArray.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0).toFixed(2);
+
 
     return (
       <div className="App">
@@ -166,13 +161,14 @@ class App extends Component {
                   removeProduct={removeProduct} 
                   productsArray={productsArray}
                   addQuantity={addQuantity}
-                  deductQuantity={deductQuantity} />
+                  deductQuantity={deductQuantity}
+                   />
               
                 <PromotionalCode down={down} />
 
-                <SubtotalContainer totalPrice={totalPrice} />                 
+                <SubtotalContainer productsTotalAmount={productsTotalAmount} />                 
 
-                <TotalContainer totalPrice={totalPrice} />
+                <TotalContainer productsTotalAmount={productsTotalAmount} />
 
                 <PurchaseButton />
               </div>

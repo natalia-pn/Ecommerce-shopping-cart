@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 class TotalContainer extends Component {
     render() {
-        const { totalPrice } = this.props;
+        const { productsTotalAmount } = this.props;
         
         return(
             <div className="Total__container">
                 <p className="Total">Total</p>
-                <p className="Total__amount">{`${totalPrice}€`}</p>
+                <p className="Total__amount">{`${productsTotalAmount}€`}</p>
             </div>  
         );
     }
 }
 
 TotalContainer.propTypes = {
-    totalPrice: PropTypes.string,
+    totaproductsTotalAmount: PropTypes.number,
 }
 
 export default TotalContainer;
