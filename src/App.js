@@ -60,7 +60,7 @@ class App extends Component {
     console.log(buttonValue)
 
     const newProductsArray = this.state.productsArray.map(item => {
-      if(item.id !== parseInt(buttonValue)) return item;
+      if(item.id !== parseInt(buttonValue) || item.quantity > 9) return item;
       
       return {
           ...item,quantity: item.quantity + 1
@@ -95,19 +95,7 @@ deductQuantity = (e) => {
 
       
   deductTotalProducts = (buttonValue) => {
-    let itemPrice;
-
-    for (const product of this.state.productsArray) {
-      if(parseInt(buttonValue) === product.id) {
-        const index = this.state.productsArray.findIndex(x => x.id  === parseInt(buttonValue));
-
-        itemPrice = this.state.productsArray[index].price;
-      }
-    }
-    this.setState(prevState => ({
-      itemsQuantity: prevState.itemsQuantity - 1,
-      totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
-    }));
+   
   }
 
   removeProduct = (e) => {
@@ -153,13 +141,6 @@ deductQuantity = (e) => {
       }));
     }
   }
-
-
-  
-
-  
-
-  
 
 
   render() {
