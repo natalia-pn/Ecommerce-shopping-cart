@@ -120,7 +120,6 @@ class App extends Component {
     }
   }
 
-
   render() {
     const { addQuantity, deductQuantity, removeProduct, triggerShoppingBag } = this;
     const { productsArray, showBagClass, productsDisplay } = this.state;
@@ -128,9 +127,6 @@ class App extends Component {
     const totalItems =  productsArray.reduce((acumulador, { quantity }) => acumulador + quantity, 0)
 
     const productsTotalAmount = productsArray.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0).toFixed(2).replace("." , ",");
-
-
-
 
     return (
       <div className="App">
@@ -150,13 +146,11 @@ class App extends Component {
                   productsArray={productsArray}
                   addQuantity={addQuantity}
                   deductQuantity={deductQuantity}
-                  removeProduct={removeProduct} 
-                   />
-              
+                  removeProduct={removeProduct} />
+
                 <PromotionalCode down={down} />
 
                 <SubtotalContainer productsTotalAmount={productsTotalAmount} />                 
-
                 <TotalContainer productsTotalAmount={productsTotalAmount} />
 
                 <PurchaseButton />
