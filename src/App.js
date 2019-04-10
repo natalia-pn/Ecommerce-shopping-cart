@@ -127,7 +127,7 @@ class App extends Component {
 
     const totalItems =  productsArray.reduce((acumulador, { quantity }) => acumulador + quantity, 0)
 
-    const productsTotalAmount = productsArray.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0).toFixed(2);
+    const productsTotalAmount = productsArray.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0).toFixed(2).replace("." , ",");
 
 
 

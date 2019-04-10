@@ -16,7 +16,7 @@ class OrderedItemsList extends Component {
                         size={item.size} 
                         price={item.price} 
                         quantity={item.quantity}
-                        itemTotal={(item.quantity * item.price).toFixed(2)}
+                        itemTotal={(item.quantity * item.price).toFixed(2).replace("." , ",")}
                         addQuantity={addQuantity}
                         deductQuantity={deductQuantity} 
                         removeProduct={removeProduct} 
