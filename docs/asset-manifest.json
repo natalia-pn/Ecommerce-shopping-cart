@@ -1,0 +1,20 @@
+{
+  "main.css": "./static/css/main.8d94cc6d.chunk.css",
+  "main.js": "./static/js/main.4bc5e13e.chunk.js",
+  "main.js.map": "./static/js/main.4bc5e13e.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+  "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+  "static/js/2.71f9aca4.chunk.js": "./static/js/2.71f9aca4.chunk.js",
+  "static/js/2.71f9aca4.chunk.js.map": "./static/js/2.71f9aca4.chunk.js.map",
+  "index.html": "./index.html",
+  "precache-manifest.06c83b1a8a55577b01408d9480b92abf.js": "./precache-manifest.06c83b1a8a55577b01408d9480b92abf.js",
+  "service-worker.js": "./service-worker.js",
+  "static/css/main.8d94cc6d.chunk.css.map": "./static/css/main.8d94cc6d.chunk.css.map",
+  "static/media/bag.svg": "./static/media/bag.6ad1cec5.svg",
+  "static/media/down-arrow.svg": "./static/media/down-arrow.9edb5402.svg",
+  "static/media/products-display.png": "./static/media/products-display.70611ce5.png",
+  "static/media/user.svg": "./static/media/user.580a0641.svg",
+  "static/media/vans-36.png": "./static/media/vans-36.7b4a030d.png",
+  "static/media/vans-39.png": "./static/media/vans-39.342badf6.png",
+  "static/media/vans-44.png": "./static/media/vans-44.82789701.png"
+}
