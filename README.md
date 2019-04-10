@@ -15,9 +15,15 @@ This project is part of Multiplica’s selection process. It has been created wi
 
 ## Do you want to clone or fork this repository?
 
-Follow official React instructions:
-
 In the project directory, you can run:
+
+### $ npm install or $ yarn install
+
+Install your favourite package manager. 
+
+### -g create-react-app
+
+Install create-react-app globally.
 
 ### `npm start`
 
