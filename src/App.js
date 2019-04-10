@@ -8,11 +8,11 @@ import vans_39 from './images/vans-39.png';
 import down from './images/down-arrow.svg';
 import OrderedItemsList from './components/OrderedItemsList';
 import Header from './components/Header';
-import './styles/App.scss';
 import PromotionalCode from './components/PromotionalCode';
 import SubtotalContainer from './components/SubtotalContainer';
 import TotalContainer from './components/TotalContainer';
 import PurchaseButton from './components/PurchaseButton';
+import './styles/App.scss';
 
 const productsList = [
   {
@@ -39,7 +39,6 @@ const productsList = [
     quantity: 1,
     id: 3
   },
-
 ]
 
 class App extends Component {
@@ -48,7 +47,6 @@ class App extends Component {
 
     this.state = {
       productsArray: productsList,
-      productToUpdate: [],
       showBagClass: 'Shopping-bag__container',
       productsDisplay: 'Products-display',
       showBag: false
@@ -56,57 +54,48 @@ class App extends Component {
   }
 
   addQuantity = (e) => {
+    const { productsArray } = this.state;
     const buttonValue = e.currentTarget.value;
     console.log(buttonValue)
 
-    const newProductsArray = this.state.productsArray.map(item => {
+    const newProductsArray = productsArray.map(item => {
       if(item.id !== parseInt(buttonValue) || item.quantity > 9) return item;
       
       return {
-          ...item,quantity: item.quantity + 1
+        ...item,quantity: item.quantity + 1
       };
     });
-  
+
     this.setState({productsArray : newProductsArray});
   }
 
 
   deductQuantity = (e) => {
+    const { productsArray } = this.state;
     const buttonValue = e.currentTarget.value;
 
-    const newProductsArray = this.state.productsArray.map(item => {
+    const newProductsArray = productsArray.map(item => {
       if(item.id !== parseInt(buttonValue) || item.quantity < 2) return item;
       
       return {
-          ...item,quantity: item.quantity - 1
+        ...item,quantity: item.quantity - 1
       };
     });
 
     this.setState({productsArray : newProductsArray});
-    console.log(newProductsArray)
   }
 
 
   removeProduct = (e) => {
-    let itemPrice;
-    const { productsArray } = this.state;
     const buttonValue = e.currentTarget.value;
-
-    for (const product of productsArray) {
-      if(parseInt(buttonValue) === product.id) {
-        const index = productsArray.findIndex(x => x.id  === parseInt(buttonValue));
-
-        itemPrice = productsArray[index].price;
-
-        productsArray.splice(index, 1);
-      }
-    }
-    this.setState(prevState => ({
-      itemsQuantity: prevState.itemsQuantity - 1,
-      totalPrice: (prevState.totalPrice - itemPrice).toFixed(2)
-    }));
+   
+    this.setState(prevState => {
+        const newProductsArray = prevState.productsArray.filter(item => item.id !== parseInt(buttonValue));
+        
+        return { productsArray: newProductsArray };
+    });
   }
-
+  
   toggleBag = () => {
     this.setState(prevState=> ({
       showBag: !this.state.showBag
@@ -133,12 +122,14 @@ class App extends Component {
 
 
   render() {
-    const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag, addQuantity, deductQuantity } = this;
+    const { addQuantity, deductQuantity, removeProduct, triggerShoppingBag } = this;
     const { productsArray, showBagClass, productsDisplay } = this.state;
 
     const totalItems =  productsArray.reduce((acumulador, { quantity }) => acumulador + quantity, 0)
 
     const productsTotalAmount = productsArray.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0).toFixed(2);
+
+
 
 
     return (
@@ -156,12 +147,10 @@ class App extends Component {
                 <p className="Delivery-date">Entrega 15 de abril</p>
 
                 <OrderedItemsList
-                  addTotalProducts={addTotalProducts}
-                  deductTotalProducts={deductTotalProducts} 
-                  removeProduct={removeProduct} 
                   productsArray={productsArray}
                   addQuantity={addQuantity}
                   deductQuantity={deductQuantity}
+                  removeProduct={removeProduct} 
                    />
               
                 <PromotionalCode down={down} />
@@ -177,9 +166,7 @@ class App extends Component {
         </main> 
       </div>
     );
-  
   }
 }
-
 
 export default App;
