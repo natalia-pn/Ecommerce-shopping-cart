@@ -15,7 +15,7 @@ class SubtotalContainer extends Component {
 }
 
 SubtotalContainer.propTypes = {
-    totalPrice: PropTypes.string,
+    productsTotalAmount: PropTypes.string,
 }
 
 export default SubtotalContainer;

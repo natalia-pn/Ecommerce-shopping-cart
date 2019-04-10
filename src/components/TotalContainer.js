@@ -15,7 +15,7 @@ class TotalContainer extends Component {
 }
 
 TotalContainer.propTypes = {
-    totaproductsTotalAmount: PropTypes.number,
+    productsTotalAmount: PropTypes.string,
 }
 
 export default TotalContainer;

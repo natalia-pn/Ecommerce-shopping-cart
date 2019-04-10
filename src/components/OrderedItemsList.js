@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class OrderedItemsList extends Component {
     render() {
-        const { productsArray, addTotalProducts, deductTotalProducts, removeProduct, addQuantity, deductQuantity } = this.props;
+        const { productsArray, addQuantity, deductQuantity, removeProduct } = this.props;
 
         return(
             <Fragment>
@@ -17,10 +17,8 @@ class OrderedItemsList extends Component {
                         price={item.price} 
                         quantity={item.quantity}
                         itemTotal={(item.quantity * item.price).toFixed(2)}
-                        addTotalProducts={addTotalProducts} 
                         addQuantity={addQuantity}
                         deductQuantity={deductQuantity} 
-                        deductTotalProducts={deductTotalProducts} 
                         removeProduct={removeProduct} 
                         productId={item.id} />)}
             </Fragment>
@@ -30,8 +28,8 @@ class OrderedItemsList extends Component {
 
 OrderedItemsList.propTypes = {
     productsArray: PropTypes.array,
-    addTotalProducts: PropTypes.func,
-    deductTotalProducts: PropTypes.func,
+    addQuantity: PropTypes.func,
+    deductQuantity: PropTypes.func,
     removeProduct: PropTypes.func
 }
 

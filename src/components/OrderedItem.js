@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class OrderedItem extends Component {
-
-    
     render() {
-        const { image, description, size, removeProduct, productId, quantity, addQuantity, deductQuantity, itemTotal } = this.props;
+        const { image, description, size, productId, addQuantity, deductQuantity, quantity, itemTotal, removeProduct } = this.props;
        
-    
-
         return(
             <div className="Order__summary">
                 <div className="Order__image-container">
@@ -32,7 +28,7 @@ class OrderedItem extends Component {
                       <button  type="button" className="Quantity-decrease__button Quantity" value={productId} onClick={deductQuantity}>-</button>
                     </div>
 
-                    <p className="Item__price">{itemTotal}</p>
+                    <p className="Item__price">{`${itemTotal}€`}</p>
                 </div> 
             </div>
         );
@@ -43,8 +39,12 @@ OrderedItem.propTypes = {
     image: PropTypes.string,
     description: PropTypes.string,
     size: PropTypes.number,
+    productId: PropTypes.number,
+    addQuantity: PropTypes.func,
+    deductQuantity: PropTypes.func,
+    quantity: PropTypes.number,
+    itemTotal: PropTypes.string,
     removeProduct:PropTypes.func,
-    productId: PropTypes.number
 }
 
 export default OrderedItem;
