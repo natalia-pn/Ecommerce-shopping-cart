@@ -1,6 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Shopping cart
+### By Natalia Pelegero Navarro
 
-## Available Scripts
+This shopping cart is intended to assist visitors to make purchases online. Upon checkout, the software calculates the total of the order.
+
+The application provides the following features:
+
+- Show/Hide shopping cart.
+- Add/Deduct item's quantity.
+- Delete items.
+- Display total of items.
+- Calculate the total order's amount.
+
+This project is part of Multiplica’s selection process. It has been created with Create React App and data is retrieved from an array, simulating the connection through an API.
+
+## Do you want to clone or fork this repository?
+
+Follow official React instructions:
 
 In the project directory, you can run:
 
@@ -43,26 +58,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
