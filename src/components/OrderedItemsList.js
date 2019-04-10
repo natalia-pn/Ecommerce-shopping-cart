@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class OrderedItemsList extends Component {
     render() {
-        const { productsArray, addTotalProducts, deductTotalProducts, removeProduct } = this.props;
+        const { productsArray, addTotalProducts, deductTotalProducts, removeProduct, addQuantity } = this.props;
 
         return(
             <Fragment>
@@ -13,8 +13,11 @@ class OrderedItemsList extends Component {
                         key={item.id} 
                         image={item.image} 
                         description={item.description} 
-                        size={item.size} price={item.price} 
+                        size={item.size} 
+                        price={item.price} 
+                        quantity={item.quantity}
                         addTotalProducts={addTotalProducts} 
+                        addQuantity={addQuantity}
                         deductTotalProducts={deductTotalProducts} 
                         removeProduct={removeProduct} 
                         productId={item.id} />)}

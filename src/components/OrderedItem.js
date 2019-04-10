@@ -2,56 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class OrderedItem extends Component {
-    constructor(props) {
-        super(props);
+
     
-        this.state = {
-          quantity: 1,
-          itemTotal: this.props.price
-        }
-      }
-
-    addQuantity = (e) => {
-        const addButtonValue = e.currentTarget.value;
-
-        this.setState(prevState => {
-            if(prevState.quantity < 10) {
-                this.props.addTotalProducts(addButtonValue)
-
-                return {
-                    quantity: prevState.quantity + 1,
-                    itemTotal: prevState.itemTotal + this.props.price
-                }
-                
-            } else {
-                return null;
-            }
-        });
-    }
-
-    deductQuantity = (e) => {
-        const addButtonValue = e.currentTarget.value;
-
-        this.setState(prevState => {
-            if(prevState.quantity > 1) {
-                this.props.deductTotalProducts(addButtonValue)
-
-                return {
-                    quantity: prevState.quantity - 1,
-                    itemTotal: prevState.itemTotal - this.props.price
-                }
-
-            } else {
-                return null;
-            }
-        });
-    }
-
     render() {
-        const { image, description, size, removeProduct, productId } = this.props;
-        const { quantity, itemTotal } = this.state;
-        const { addQuantity, deductQuantity } = this;
-        const total = itemTotal.toFixed(2);
+        const { image, description, size, removeProduct, productId, quantity, addQuantity={addQuantity} } = this.props;
+        const { deductQuantity } = this;
+    
 
         return(
             <div className="Order__summary">
@@ -71,12 +27,12 @@ class OrderedItem extends Component {
                     <div className="Quantity-display__container">
                       <button type="button" className="Quantity-increase__button Quantity" value={productId} onClick={addQuantity}>+</button>
 
-                      <div className="Quantity-display__box Quantity">{`${quantity}`}</div>
+                      <div className="Quantity-display__box Quantity">{quantity}</div>
 
                       <button  type="button" className="Quantity-decrease__button Quantity" value={productId} onClick={deductQuantity}>-</button>
                     </div>
 
-                    <p className="Item__price">{`${total}€`}</p>
+                    <p className="Item__price">total</p>
                 </div> 
             </div>
         );
