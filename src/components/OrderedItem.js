@@ -5,8 +5,8 @@ class OrderedItem extends Component {
 
     
     render() {
-        const { image, description, size, removeProduct, productId, quantity, addQuantity={addQuantity} } = this.props;
-        const { deductQuantity } = this;
+        const { image, description, size, removeProduct, productId, quantity, addQuantity, deductQuantity } = this.props;
+       
     
 
         return(

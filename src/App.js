@@ -73,16 +73,27 @@ class App extends Component {
 
 
   // addTotalProducts = (e) => {
-  
-
-
     // const totalPriceSum =  this.state.itemsPricesArray.reduce((a, b) => a + b).toFixed(2)
 
 // }
 
-      
- 
 
+deductQuantity = (e) => {
+  const buttonValue = e.currentTarget.value;
+
+  const newProductsArray = this.state.productsArray.map(item => {
+    if(item.id !== parseInt(buttonValue)) return item;
+    
+    return {
+        ...item,quantity: item.quantity - 1
+    };
+  });
+
+  this.setState({productsArray : newProductsArray});
+  console.log(newProductsArray)
+}
+
+      
   deductTotalProducts = (buttonValue) => {
     let itemPrice;
 
@@ -146,30 +157,13 @@ class App extends Component {
 
   
 
-deductQuantity = (e) => {
-    const addButtonValue = e.currentTarget.value;
-
-    this.setState(prevState => {
-        if(prevState.quantity > 1) {
-            this.props.deductTotalProducts(addButtonValue)
-
-            return {
-                quantity: prevState.quantity - 1,
-                itemTotal: prevState.itemTotal - this.props.price
-            }
-
-        } else {
-            return null;
-        }
-    });
-}
   
 
   
 
 
   render() {
-    const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag, addQuantity } = this;
+    const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag, addQuantity, deductQuantity } = this;
     const { itemsQuantity, productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
 
     return (
@@ -191,7 +185,8 @@ deductQuantity = (e) => {
                   deductTotalProducts={deductTotalProducts} 
                   removeProduct={removeProduct} 
                   productsArray={productsArray}
-                  addQuantity={addQuantity} />
+                  addQuantity={addQuantity}
+                  deductQuantity={deductQuantity} />
               
                 <PromotionalCode down={down} />
 
