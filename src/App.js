@@ -78,20 +78,20 @@ class App extends Component {
 // }
 
 
-deductQuantity = (e) => {
-  const buttonValue = e.currentTarget.value;
+  deductQuantity = (e) => {
+    const buttonValue = e.currentTarget.value;
 
-  const newProductsArray = this.state.productsArray.map(item => {
-    if(item.id !== parseInt(buttonValue)) return item;
-    
-    return {
-        ...item,quantity: item.quantity - 1
-    };
-  });
+    const newProductsArray = this.state.productsArray.map(item => {
+      if(item.id !== parseInt(buttonValue) || item.quantity < 2) return item;
+      
+      return {
+          ...item,quantity: item.quantity - 1
+      };
+    });
 
-  this.setState({productsArray : newProductsArray});
-  console.log(newProductsArray)
-}
+    this.setState({productsArray : newProductsArray});
+    console.log(newProductsArray)
+  }
 
       
   deductTotalProducts = (buttonValue) => {
