@@ -142,7 +142,9 @@ class App extends Component {
 
   render() {
     const { addTotalProducts, deductTotalProducts, removeProduct, triggerShoppingBag, addQuantity, deductQuantity } = this;
-    const { itemsQuantity, productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
+    const { productsArray, showBagClass, productsDisplay, totalPrice } = this.state;
+
+    const totalItems =  productsArray.reduce((acumulador, { quantity }) => acumulador + quantity, 0)
 
     return (
       <div className="App">
@@ -153,7 +155,7 @@ class App extends Component {
 
           <div className={showBagClass}>
             <div className="Shopping-bag__summary">
-              <p className="Items-quantity">{`Tu cesta (${itemsQuantity} productos)`}</p>
+              <p className="Items-quantity">{`Tu cesta (${totalItems} productos)`}</p>
 
               <div className="Orders-summary__container">
                 <p className="Delivery-date">Entrega 15 de abril</p>
