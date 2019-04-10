@@ -7,11 +7,9 @@
 
     @media all and(min-width: 768px) {
         height: 95px;
-        border-bottom: solid $light-grey;
     }
 
     @media all and(min-width: 992px) {
-        height: 95px;
         border-bottom: solid $light-grey;
     }
 }
@@ -46,7 +44,6 @@
     @media all and (min-width: 400px) {
         width: 166px;
     }
-   
 }
 
 .Delete-action__container {
@@ -65,8 +62,8 @@
 .Delete-action__button {
    border: none;
    background: none;
-   padding: 0;
    outline: none;
+   padding: 0;
 }
 
 .far {

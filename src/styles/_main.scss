@@ -34,7 +34,6 @@
 
      @media all and (min-width: 992px) {
         width: 55vw;
-        margin: 75px 20px 0 15px;
     }
 
     @media all and (min-width: 1200px) {
@@ -71,6 +70,10 @@
 
     @media all and (min-width:768px) {
         margin: 100px 15px 17px;
+    }
+
+    @media all and (min-width:992px) {
+        margin: 80px 15px 17px;
     }
 }
 
