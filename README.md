@@ -17,11 +17,11 @@ This project is part of Multiplica’s selection process. It has been created wi
 
 In the project directory, you can run:
 
-### $ npm install or $ yarn install
+### `$ npm install or $ yarn install`
 
 Install your favourite package manager. 
 
-### -g create-react-app
+### `-g create-react-app`
 
 Install create-react-app globally.
 
