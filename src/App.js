@@ -72,10 +72,11 @@ class App extends Component {
   }
 
 
-  // addTotalProducts = (e) => {
-    // const totalPriceSum =  this.state.itemsPricesArray.reduce((a, b) => a + b).toFixed(2)
+  // addTotalProducts = (buttonValue) => {
+  //   // const totalPriceSum =  this.state.itemsPricesArray.reduce((a, b) => a + b).toFixed(2)
 
-// }
+
+  // }
 
 
   deductQuantity = (e) => {
@@ -93,10 +94,6 @@ class App extends Component {
     console.log(newProductsArray)
   }
 
-      
-  deductTotalProducts = (buttonValue) => {
-   
-  }
 
   removeProduct = (e) => {
     let itemPrice;

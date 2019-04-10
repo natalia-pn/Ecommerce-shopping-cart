@@ -5,7 +5,7 @@ class OrderedItem extends Component {
 
     
     render() {
-        const { image, description, size, removeProduct, productId, quantity, addQuantity, deductQuantity } = this.props;
+        const { image, description, size, removeProduct, productId, quantity, addQuantity, deductQuantity, itemTotal } = this.props;
        
     
 
@@ -32,7 +32,7 @@ class OrderedItem extends Component {
                       <button  type="button" className="Quantity-decrease__button Quantity" value={productId} onClick={deductQuantity}>-</button>
                     </div>
 
-                    <p className="Item__price">total</p>
+                    <p className="Item__price">{itemTotal}</p>
                 </div> 
             </div>
         );

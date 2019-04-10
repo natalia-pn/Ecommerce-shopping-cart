@@ -16,6 +16,7 @@ class OrderedItemsList extends Component {
                         size={item.size} 
                         price={item.price} 
                         quantity={item.quantity}
+                        itemTotal={(item.quantity * item.price).toFixed(2)}
                         addTotalProducts={addTotalProducts} 
                         addQuantity={addQuantity}
                         deductQuantity={deductQuantity} 
